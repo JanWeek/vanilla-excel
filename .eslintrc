@@ -9,7 +9,12 @@
     "linebreak-style": "off",
     "no-confusing-arrow": "off",
     "arrow-parens": ["error", "as-needed"],
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "import/no-unresolved": "off",
+    "class-methods-use-this": "off",
+    "no-param-reassign": "off",
+    "no-debugger": "off",
+    "no-plusplus": "off"
   },
   "extends": ["eslint:recommended", "airbnb-base"]
 }
