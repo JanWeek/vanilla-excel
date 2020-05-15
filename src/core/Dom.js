@@ -36,6 +36,27 @@ class DOM {
       this.$el.appendChild(childNode.$el);
     }
   }
+
+  closest(selector) {
+    // eslint-disable-next-line no-use-before-define
+    return $(this.$el.closest(selector));
+  }
+
+  getCoords() {
+    return this.$el.getBoundingClientRect();
+  }
+
+  get data() {
+    return this.$el.dataset;
+  }
+
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector);
+  }
+
+  css(styles = {}) {
+    Object.assign(this.$el.style, styles);
+  }
 }
 
 export default function $(selector) {
