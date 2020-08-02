@@ -41,8 +41,6 @@ function createCell(row, state) {
       ...defaultStyles,
       ...state.stylesState[id]
     });
-    console.log('value', data);
-    console.log('parsing', parse(data));
     return `
       <div
         class="cell"

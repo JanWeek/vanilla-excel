@@ -9,8 +9,6 @@ import Formula from '@/components/formula/Formula';
 import Table from '@/components/table/Table';
 import './scss/index.scss';
 
-console.log(initialState);
-
 /*
   TODO: if user's local storage structure doesn't match with actual it will not work.
         Should destroy old local storage and init new one
@@ -18,7 +16,6 @@ console.log(initialState);
 const store = createStore(rootReducer, initialState);
 
 const stateListener = debounce(state => {
-  console.log('App state: ', state);
   storage('excel-state', state);
 }, 300);
 
