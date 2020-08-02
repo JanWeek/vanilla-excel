@@ -16,7 +16,7 @@ export default function exportStore(rootReducer, initialState = {}) {
       listeners.forEach(listener => listener(state));
     },
     getState() {
-      return state;
+      return JSON.parse(JSON.stringify(state));
     }
   };
 }

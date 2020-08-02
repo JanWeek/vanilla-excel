@@ -14,7 +14,7 @@ class DOM {
   }
 
   text(content) {
-    if (typeof content === 'string') {
+    if (typeof content === 'string' || typeof content === 'number') {
       this.$el.textContent = content;
       return this;
     }
@@ -71,6 +71,13 @@ class DOM {
     Object.assign(this.$el.style, styles);
   }
 
+  getStyles(styles = []) {
+    return styles.reduce((result, style) => {
+      result[style] = this.$el.style[style];
+      return result;
+    }, {});
+  }
+
   id(parse) {
     if (parse) {
       const parsed = this.id().split(':');
@@ -85,6 +92,14 @@ class DOM {
   focus() {
     this.$el.focus();
     return this;
+  }
+
+  attr(name, value) {
+    if (typeof value !== 'undefined') {
+      this.$el.setAttribute(name, value);
+      return this;
+    }
+    return this.$el.getAttribute(name);
   }
 
   addClass(className) {
