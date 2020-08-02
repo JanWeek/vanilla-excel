@@ -5,6 +5,8 @@ export default class ExcelComponent extends DomListener {
     super($root, options.listeners);
     this.name = options.name;
     this.emitter = options.emitter;
+    this.subscribe = options.subscribe || [];
+    this.store = options.store;
     this.unsubscribers = [];
 
     this.prepare();
@@ -34,6 +36,21 @@ export default class ExcelComponent extends DomListener {
    */
   $on(event, cb) {
     this.unsubscribers = this.emitter.subscribe(event, cb);
+  }
+
+  /**
+   * Dispatches store action
+   * @param action
+   * @param state
+   */
+  $dispatch(action) {
+    this.store.dispatch(action);
+  }
+
+  storeChanged() {}
+
+  isWatching(key) {
+    return this.subscribe.includes(key);
   }
 
   /**

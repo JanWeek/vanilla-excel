@@ -14,7 +14,9 @@
     "class-methods-use-this": "off",
     "no-param-reassign": "off",
     "no-debugger": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "consistent-return": "off",
+    "no-prototype-builtins": "off"
   },
   "extends": ["eslint:recommended", "airbnb-base"]
 }
