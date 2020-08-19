@@ -17,22 +17,28 @@ const actions = {
 
   changeStyles(data) {
     return {
-      type: 'CHANGE_STYLES',
+      type: types.CHANGE_STYLES,
       data
     };
   },
 
   applyStyles(data) {
     return {
-      type: 'APPLY_STYLES',
+      type: types.APPLY_STYLES,
       data
     };
   },
 
   changeTableTitle(data) {
     return {
-      type: 'CHANGE_TABLE_TITLE',
+      type: types.CHANGE_TABLE_TITLE,
       data
+    };
+  },
+
+  updateDate() {
+    return {
+      type: types.UPDATE_DATE
     };
   }
 };
