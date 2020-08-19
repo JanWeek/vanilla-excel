@@ -16,7 +16,9 @@
     "no-debugger": "off",
     "no-plusplus": "off",
     "consistent-return": "off",
-    "no-prototype-builtins": "off"
+    "no-prototype-builtins": "off",
+    "no-restricted-globals": "off",
+    "no-case-declarations": "off"
   },
   "extends": ["eslint:recommended", "airbnb-base"]
 }

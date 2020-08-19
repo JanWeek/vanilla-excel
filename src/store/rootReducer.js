@@ -20,9 +20,9 @@ export default function rootReducer(state, action) {
         action.data.value,
         dataState: value(state, 'dataState', action)
       };
-    case 'CHANGE_STYLES':
+    case types.CHANGE_STYLES:
       return { ...state, currentStyles: action.data };
-    case 'APPLY_STYLES':
+    case types.APPLY_STYLES:
       val = state.stylesState || {};
       action.data.ids.forEach(id => {
         val[id] = { ...val[id], ...action.data.value };
@@ -32,8 +32,10 @@ export default function rootReducer(state, action) {
         stylesState: val,
         currentStyles: { ...state.currentStyles, ...action.data.value }
       };
-    case 'CHANGE_TABLE_TITLE':
+    case types.CHANGE_TABLE_TITLE:
       return { ...state, tableTitle: action.data };
+    case types.UPDATE_DATE:
+      return { ...state, lastOpenDate: new Date().toJSON() };
     default:
       return state;
   }

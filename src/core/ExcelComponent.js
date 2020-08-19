@@ -41,7 +41,6 @@ export default class ExcelComponent extends DomListener {
   /**
    * Dispatches store action
    * @param action
-   * @param state
    */
   $dispatch(action) {
     this.store.dispatch(action);
@@ -70,6 +69,8 @@ export default class ExcelComponent extends DomListener {
    */
   destroy() {
     this.removeDOMListeners();
-    this.unsubscribers.forEach(unsub => unsub());
+    if (this.unsubscribers.length) {
+      this.unsubscribers.forEach(unsub => unsub());
+    }
   }
 }
