@@ -1,5 +1,5 @@
-import { defaultStyles, defaultTableTitle } from '@core/const';
-import { cloneObject } from '@core/utils';
+import { defaultStyles, defaultTableTitle } from '@core/utils/const';
+import { cloneObject } from '@core/utils/functions';
 
 const defaultState = {
   tableTitle: defaultTableTitle,

@@ -1,4 +1,4 @@
-import { capitalize } from '@core/utils';
+import { capitalize } from '@core/utils/functions';
 
 function getMethodName(eventName) {
   return `on${capitalize(eventName)}`;
