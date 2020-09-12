@@ -6,8 +6,8 @@ import Formula from '@/components/formula/Formula';
 import Table from '@/components/table/Table';
 import normalizeState from '@/store/initialState';
 import rootReducer from '@/store/rootReducer';
-import createStore from '@core/createStore';
-import { debounce, storage } from '@core/utils';
+import createStore from '@/store/createStore';
+import { debounce, storage } from '@core/utils/functions';
 
 function storageName(param) {
   return `excel:${param}`;

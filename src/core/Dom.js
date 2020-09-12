@@ -38,11 +38,17 @@ class DOM {
   }
 
   append(childNode) {
-    if (Element.prototype.append) {
-      this.$el.append(childNode.$el);
-    } else {
-      this.$el.appendChild(childNode.$el);
+    if (childNode instanceof DOM) {
+      childNode = childNode.$el;
     }
+
+    if (Element.prototype.append) {
+      this.$el.append(childNode);
+    } else {
+      this.$el.appendChild(childNode);
+    }
+
+    return this;
   }
 
   closest(selector) {

@@ -1,8 +1,8 @@
 import $ from '@core/Dom';
 import ExcelComponent from '@core/ExcelComponent';
 import actions from '@/store/actions';
-import { defaultTableTitle } from '@core/const';
-import { debounce } from '@core/utils';
+import { defaultTableTitle } from '@core/utils/const';
+import { debounce } from '@core/utils/functions';
 import ActiveRoute from '@core/router/ActiveRoute';
 
 export default class Header extends ExcelComponent {

@@ -1,8 +1,8 @@
 import $ from '@core/Dom';
 import Emitter from '@core/Emitter';
-import StoreSubscriber from '@core/StoreSubscriber';
+import StoreSubscriber from '@/store/StoreSubscriber';
 import actions from '@/store/actions';
-import { preventDefault } from '@core/utils';
+import { preventDefault } from '@core/utils/functions';
 
 export default class Excel {
   constructor(options) {

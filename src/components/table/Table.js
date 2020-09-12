@@ -1,6 +1,6 @@
 import ExcelComponent from '@core/ExcelComponent';
 import $ from '@core/Dom';
-import parse from '@core/parse';
+import parse from '@core/utils/parse';
 import actions from '@/store/actions';
 import createTable from '@/components/table/table.template';
 import resizeHandler from '@/components/table/table.resize';
@@ -11,7 +11,7 @@ import {
   shouldResize
 } from '@/components/table/table.functions';
 import TableSelection from '@/components/table/TableSelection';
-import { defaultStyles } from '@core/const';
+import { defaultStyles } from '@core/utils/const';
 
 export default class Table extends ExcelComponent {
   static className = 'excel__table';

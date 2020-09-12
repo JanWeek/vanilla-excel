@@ -1,7 +1,7 @@
 import ExcelStateComponent from '@core/ExcelStateComponent';
 import createToolbar from '@/components/toolbar/toolbar.template';
 import $ from '@core/Dom';
-import { defaultStyles } from '@core/const';
+import { defaultStyles } from '@core/utils/const';
 
 export default class Toolbar extends ExcelStateComponent {
   static className = 'excel__toolbar';
