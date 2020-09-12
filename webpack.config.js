@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack =  require('webpack');
+const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -9,15 +9,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const filename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`;
 const jsLoaders = () => {
-  const loaders = [
-    {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: ['@babel/plugin-proposal-class-properties']
-      }
-    }
-  ];
+  const loaders = ['babel-loader'];
 
   if (isDev) {
     loaders.push('eslint-loader');
@@ -68,6 +60,10 @@ module.exports = {
   ],
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: 'css-loader'
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
