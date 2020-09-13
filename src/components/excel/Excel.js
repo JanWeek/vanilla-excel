@@ -1,4 +1,4 @@
-import $ from '@core/Dom';
+import $ from '@core/DOM';
 import Emitter from '@core/Emitter';
 import StoreSubscriber from '@/store/StoreSubscriber';
 import actions from '@/store/actions';
