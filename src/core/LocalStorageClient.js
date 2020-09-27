@@ -11,7 +11,6 @@ export default class LocalStorageClient {
   }
 
   get() {
-    // return Promise.resolve(storage(this.name));
     return new Promise(resolve => {
       const state = storage(this.name);
       setTimeout(() => {
