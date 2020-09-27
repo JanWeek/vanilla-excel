@@ -9,5 +9,9 @@ export default class App {
   init() {
     this.router.setRoot(this.rootSelector);
     this.router.init();
+
+    if (process.env.NODE_ENV === 'development') {
+      window.$app = this;
+    }
   }
 }

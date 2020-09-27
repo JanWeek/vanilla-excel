@@ -3,14 +3,14 @@ import { isEqual } from '@core/utils/functions';
 export default class StoreSubscriber {
   constructor(store) {
     this.store = store;
-    this.sub = null;
+    this.subscription = null;
     this.prevState = {};
   }
 
   subscribeComponents(components) {
     this.prevState = this.store.getState();
 
-    this.sub = this.store.subscribe(state => {
+    this.subscription = this.store.subscribe(state => {
       Object.keys(state).forEach(key => {
         if (!isEqual(this.prevState[key], state[key])) {
           components.forEach(component => {
@@ -31,6 +31,6 @@ export default class StoreSubscriber {
   }
 
   unsubscribeFromStore() {
-    this.sub.unsubscribe();
+    this.subscription.unsubscribe();
   }
 }
