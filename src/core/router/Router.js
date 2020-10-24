@@ -1,39 +1,39 @@
-import $ from '@core/Dom';
+import $ from '@core/DOM';
 import ActiveRoute from '@core/router/ActiveRoute';
 
 export default class Router {
-  constructor(selector, routes) {
-    if (!selector) {
-      throw new Error('App root selector is required');
-    }
-
-    this.placeholder = $(selector);
+  constructor(selector, routes, loader) {
     this.routes = routes;
-
+    this.loader = loader;
+    this.$root = null;
     this.page = null;
 
     this.changePageHandler = this.changePageHandler.bind(this);
-
-    this.init();
   }
 
-  init() {
+  setRoot(selector) {
+    this.$root = $(selector);
+  }
+
+  async init() {
     window.addEventListener('hashchange', this.changePageHandler);
-    this.changePageHandler();
+    await this.changePageHandler();
   }
 
-  changePageHandler() {
+  async changePageHandler() {
     if (this.page) {
       this.page.destroy();
     }
-    this.placeholder.clear();
+    this.$root.clear().append(this.loader);
 
     const Page = ActiveRoute.path.includes('excel')
       ? this.routes.excel
       : this.routes.dashboard;
     this.page = new Page(ActiveRoute.param);
 
-    this.placeholder.append(this.page.getRoot());
+    const root = await this.page.getRoot();
+
+    this.$root.clear().append(root);
 
     this.page.afterRender();
   }

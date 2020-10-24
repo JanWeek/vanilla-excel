@@ -1,5 +1,5 @@
 import ExcelComponent from '@core/ExcelComponent';
-import $ from '@core/Dom';
+import $ from '@core/DOM';
 import parse from '@core/utils/parse';
 import actions from '@/store/actions';
 import createTable from '@/components/table/table.template';

@@ -1,4 +1,4 @@
-import $ from '@core/Dom';
+import $ from '@core/DOM';
 import ExcelComponent from '@core/ExcelComponent';
 import actions from '@/store/actions';
 import { defaultTableTitle } from '@core/utils/const';
