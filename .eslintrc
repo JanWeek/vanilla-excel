@@ -1,12 +1,23 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "env": {
     "es6": true,
     "browser": true,
     "node": true,
     "jest/globals": true
   },
+  "plugins": [
+    "jest",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
+    "max-len": ["error", { "code": 120 }],
     "linebreak-style": "off",
     "no-confusing-arrow": "off",
     "arrow-parens": ["error", "as-needed"],
@@ -19,8 +30,7 @@
     "consistent-return": "off",
     "no-prototype-builtins": "off",
     "no-restricted-globals": "off",
-    "no-case-declarations": "off"
-  },
-  "plugins": ["jest"],
-  "extends": ["eslint:recommended", "airbnb-base"]
+    "no-case-declarations": "off",
+    "@typescript-eslint/no-empty-function": "off"
+  }
 }
