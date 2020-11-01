@@ -14,7 +14,7 @@ export default class Formula extends ExcelComponent {
   }
 
   storeChanged({ currentText }) {
-    this.$formula.text(currentText);
+    this.$formula.setText(currentText);
   }
 
   toHTML() {
@@ -30,12 +30,12 @@ export default class Formula extends ExcelComponent {
     this.$formula = this.$root.find('#formula-input');
 
     this.$on('table:select', $cell => {
-      this.$formula.text($cell.data.value);
+      this.$formula.setText($cell.data.value);
     });
   }
 
   onInput(event) {
-    this.$emit('formula:input', $(event.target).text());
+    this.$emit('formula:input', $(event.target).getText());
   }
 
   onKeydown(event) {

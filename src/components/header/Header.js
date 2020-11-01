@@ -55,6 +55,6 @@ export default class Header extends ExcelComponent {
 
   onInput(event) {
     const $target = $(event.target);
-    this.$dispatch(actions.changeTableTitle($target.text()));
+    this.$dispatch(actions.changeTableTitle($target.getText()));
   }
 }

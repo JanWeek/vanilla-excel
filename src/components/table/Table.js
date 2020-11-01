@@ -40,7 +40,7 @@ export default class Table extends ExcelComponent {
     this.$on('formula:input', value => {
       this.selection.current
         .attr('data-value', value)
-        .text(parse(value) || '');
+        .setText(parse(value) || '');
       this.updateCellState(value);
     });
 
@@ -110,6 +110,6 @@ export default class Table extends ExcelComponent {
   }
 
   onInput(event) {
-    this.updateCellState($(event.target).text());
+    this.updateCellState($(event.target).getText());
   }
 }
